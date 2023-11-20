@@ -5,8 +5,29 @@ const fetch = require('node-fetch');
 const app = express();
 const port = 3001;
 
-app.use(cors());
+app.use(cors({
+    origin: ["http://localhost:5173"],
+    methods: ["GET", "POST", "PUT"],
+    credentials: true
+}));
 app.use(express.json());
+
+// endpoint to retrieve all countries
+app.get('/countries', async (req, res) => {
+    try {
+        const response = await fetch(`https://restcountries.com/v3.1/all`);
+        const countries = await response.json();
+        res.json(countries);
+    } catch (error) {
+        console.error(error);
+        res
+        .status(500)
+        .json(
+            { 
+                message: "Error retrieving countries data" 
+            });
+    }
+});
 
 app.get('/country/:name', async (req, res) => {
     // store the entered value to a varaible called name
@@ -26,7 +47,8 @@ app.get('/country/:name', async (req, res) => {
         res.json(data);
     }
     catch (error) {
-        res.status(500)
+        res
+        .status(500)
         .json({
             message: "Error loading data"
         })
