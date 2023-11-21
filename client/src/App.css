@@ -5,6 +5,21 @@ body{
   font-family: 'Open Sans', sans-serif;
 }
 
+.container {
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 70px;
+  font-weight: 600;
+  color:#6c1b97;
+  box-shadow: 0 8px 8px -4px rgb(88, 13, 146);
+}
+
+.country-info {
+  margin-top: 6em;
+}
+
 .search {
   width: 100%;
   position: relative;
@@ -13,7 +28,7 @@ body{
 
 .searchTerm {
   width: 100%;
-  border: 3px solid #0000cc;
+  border: 3px solid #6c1b97;
   border-right: none;
   padding: 5px;
   height: 20px;
@@ -29,8 +44,8 @@ body{
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid #0000cc;
-  background: #0000cc;
+  border: 1px solid #6c1b97;
+  background: #6c1b97;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
@@ -42,7 +57,7 @@ body{
 .wrap{
   width: 30%;
   position: absolute;
-  top: 50%;
+  /* top: 50%; */
   left: 50%;
   transform: translate(-50%, -50%);
 }

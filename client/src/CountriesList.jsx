@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 const CountriesList = () => {
+  // countries is set to an empty array at first
   const [countries, setCountries] = useState([]);
+  // while countries information has yet to be rendered loading will be set to true
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -9,7 +11,7 @@ const CountriesList = () => {
       .then((response) => response.json())
       .then((data) => {
         setCountries(data);
-        setLoading(false);
+        setLoading(false); // once data has been loaded, loading will now be set to false
       })
       .catch((error) => {
         console.error("Error fetching countries: ", error);
@@ -17,6 +19,7 @@ const CountriesList = () => {
       });
   }, []);
 
+  // if loading is true this message will be rendered
   if (loading) {
     return <div>Loading...</div>;
   }
