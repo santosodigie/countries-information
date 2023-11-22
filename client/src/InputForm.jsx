@@ -19,7 +19,7 @@ function InputForm({ onSearch }) {
           <input
             type="text"
             className="searchTerm"
-            placeholder="What are you looking for?"
+            placeholder="Search for a Country?"
             value={inputValue}
             onChange={handleInputChange}
           />

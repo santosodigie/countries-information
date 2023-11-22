@@ -25,11 +25,17 @@ const CountriesList = () => {
   }
 
   return (
-    <ul>
+    <div>
       {countries.map((country) => (
-        <li key={country.name.common}>{country.name.common}</li>
+        <div key={country.name.common} className="country-info">
+          <h2>{country.name.common}</h2>
+          <p>Capital: {country.capital}</p>
+          <p>Region: {country.region}</p>
+          <p>Subregion: {country.subregion}</p>
+          <img src={country.flags.png} />
+        </div>
       ))}
-    </ul>
+    </div>
   );
 };
 

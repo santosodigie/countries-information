@@ -1,19 +1,50 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+
 body{
-  background: #f2f2f2;
+  background: #d195ff;
   font-family: 'Open Sans', sans-serif;
+}
+
+.button {
+  margin-top: 3em;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: rgb(162, 0, 255);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:hover {
+  background-color: #a95cc5;
+}
+
+.button:active {
+  background-color: #a95cc5;
+  box-shadow: 0 3px #666;
+  transform: translateY(2px);
 }
 
 .container {
   text-align: center;
 }
 
+
+
 .container h1 {
   font-size: 70px;
   font-weight: 600;
-  color:#6c1b97;
-  box-shadow: 0 8px 8px -4px rgb(88, 13, 146);
+  color:#a112da;
+  box-shadow: 0 8px 8px -4px rgb(172, 18, 210);
 }
 
 .country-info {
@@ -28,7 +59,7 @@ body{
 
 .searchTerm {
   width: 100%;
-  border: 3px solid #6c1b97;
+  border: 3px solid #9622d4;
   border-right: none;
   padding: 5px;
   height: 20px;
@@ -44,8 +75,8 @@ body{
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid #6c1b97;
-  background: #6c1b97;
+  border: 1px solid #9622d4;
+  background: #9622d4;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
