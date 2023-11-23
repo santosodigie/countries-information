@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import InputForm from "./InputForm";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CountriesList from "./CountriesList";
 import CountriesPage from "./CountriesPage";
+import TopOfPage from "./topofpage";
 
 import "./App.css";
 
@@ -15,14 +14,13 @@ function App() {
 
   return (
     <>
+      <TopOfPage />
       <div className="container">
         <CountriesPage />
         <button className="button" onClick={handleToggleCountries}>
           {showCountries ? "Hide Countries" : "Show all Countries"}
         </button>
         {showCountries && <CountriesList />}
-        {/* <InputForm />
-      <CountriesList /> */}
       </div>
     </>
   );
