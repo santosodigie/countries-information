@@ -30,31 +30,36 @@ app.get('/countries', async (req, res) => {
 });
 
 app.get('/country/:name', async (req, res) => {
-    // store the entered value to a varaible called name
     const { name } = req.params;
 
     try {
         const response = await fetch(`https://restcountries.com/v3.1/name/${name}`);
-        const data = await response.json();
-        // return 404 error if country is not found
-        if (data.status == 404) {
-            return res.status(404)
-            .json({
-                     message: "Country not found" 
+
+        if (!response.ok) { 
+            if (response.status === 404) {
+                return res.status(404).json({
+                    message: "Country not found" 
                 });
+            } else {
+                throw new Error('Non-200 response');
+            }
         }
-        // sends the data 
+
+        const data = await response.json();
         res.json(data);
     }
     catch (error) {
-        res
-        .status(500)
-        .json({
+        res.status(500).json({
             message: "Error loading data"
-        })
+        });
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`)
-})
+
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`)
+    });
+}
+
+module.exports = app
