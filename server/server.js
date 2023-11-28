@@ -3,7 +3,8 @@ const cors = require('cors');
 const fetch = require('node-fetch');
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001; // setting port variable to use the port assigned by hosting enviroment, otherwise use port 3001
+
 
 app.use(cors({
     origin: ["http://localhost:5173"],
@@ -11,6 +12,11 @@ app.use(cors({
     credentials: true
 }));
 app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.send('Hi Welcome to Santos Odigies Express Server');
+  });
+  
 
 // endpoint to retrieve all countries
 app.get('/countries', async (req, res) => {
