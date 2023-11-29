@@ -7,7 +7,7 @@ const port = process.env.PORT || 3001; // setting port variable to use the port 
 
 
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://countries-information-hv4xsantos.vercel.app", "http://localhost:5173"],
     methods: ["GET", "POST", "PUT"],
     credentials: true
 }));

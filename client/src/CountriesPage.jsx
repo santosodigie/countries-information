@@ -38,6 +38,16 @@ function CountriesPage() {
               <p>Capital: {countryData[0].capital}</p>
               <p>Region: {countryData[0].region}</p>
               <p>Subregion: {countryData[0].subregion}</p>
+              <p>Continents: {countryData[0].continents}</p>
+              <p>Population: {countryData[0].population.toLocaleString()}</p>
+              <div>
+                <h4>Currencies:</h4>
+                {Object.values(countryData[0].currencies).map((currency) => (
+                  <p
+                    key={currency.name}
+                  >{`${currency.name} (${currency.symbol})`}</p>
+                ))}
+              </div>
             </div>
           </div>
         )}
