@@ -7,7 +7,7 @@ const CountriesList = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/countries")
+    fetch("https://countries-information-santos.onrender.com/countries")
       .then((response) => response.json())
       .then((data) => {
         setCountries(data);

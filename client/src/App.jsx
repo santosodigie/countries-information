@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CountriesList from "./CountriesList";
 import CountriesPage from "./CountriesPage";
-import TopOfPage from "./topofpage";
+import TopOfPage from "./TopOfPage";
 
 import "./App.css";
 

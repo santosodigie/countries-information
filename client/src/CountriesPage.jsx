@@ -10,7 +10,9 @@ function CountriesPage() {
     setError("");
     setCountryData(null);
     try {
-      const response = await fetch(`http://localhost:3001/country/${name}`);
+      const response = await fetch(
+        `https://countries-information-santos.onrender.com/country/${name}`
+      );
       if (!response.ok) {
         throw new Error("Country not found");
       }
