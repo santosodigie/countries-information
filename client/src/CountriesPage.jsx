@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import InputForm from "./inputform";
+import InputForm from "./InputForm";
 
 function CountriesPage() {
   const [countryData, setCountryData] = useState(null);
